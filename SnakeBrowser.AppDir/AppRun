@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Verzeichnis, in dem das AppImage gemountet wurde
+HERE="$(dirname "$(readlink -f "$0")")"
+
+# Profilverzeichnis außerhalb des AppImage
+PROFILE_DIR="$HOME/.zen/snakeprofile"
+
+# Existiert es nicht? Dann anlegen
+mkdir -p "$PROFILE_DIR"
+
+# Binary starten mit Profil
+exec "$HERE/usr/snake" --profile "$PROFILE_DIR" "$@"
+
+
+
+
+
+

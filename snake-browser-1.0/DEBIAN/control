@@ -1,0 +1,10 @@
+Package: snake
+Version: 1.0
+Section: web
+Priority: optional
+Architecture: amd64
+Maintainer: Harvey186 <harvey186@hotmail.com>
+Description: This Browser is a fork of Zen Browser with several patches for more privacy 
+ with several preinstalled extensions
+
+

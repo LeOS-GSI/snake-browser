@@ -1,0 +1,76 @@
+From 0ec6c426d47d3b969bf632c4455b26ea5fc55426 Mon Sep 17 00:00:00 2001
+From: harvey186 <harvey186@hotmail.com>
+Date: Tue, 15 Jul 2025 09:22:54 +0200
+Subject: [PATCH] bugfix
+
+---
+ modules/libpref/init/all.js | 30 +++++++++++++++---------------
+ 1 file changed, 15 insertions(+), 15 deletions(-)
+
+diff --git a/modules/libpref/init/all.js b/modules/libpref/init/all.js
+index d45285c81a..a2f12a1b1d 100644
+--- a/modules/libpref/init/all.js
++++ b/modules/libpref/init/all.js
+@@ -3082,7 +3082,7 @@ pref("network.tcp.keepalive.idle_time", 600); // seconds; 10 mins
+ 
+ // All the Geolocation preferences are here.
+ //
+-pref("geo.provider.network.url", "http://ip-api.com/json/
++pref("geo.provider.network.url", "http://ip-api.com/json/");
+ 
+ // Timeout to wait before sending the location request.
+ pref("geo.provider.network.timeToWaitBeforeSending", 5000);
+@@ -3305,22 +3305,22 @@ pref("urlclassifier.malwareTable", "goog-malware-proto,goog-unwanted-proto,mozte
+ 
+ // Tables for anti-tracking features
+ pref("urlclassifier.trackingAnnotationTable", "moztest-track-simple,ads-track-digest256,social-track-digest256,analytics-track-digest256,content-track-digest256");
+-pref("urlclassifier.trackingAnnotationWhitelistTable", "moztest-trackwhite-simple,mozstd-trackwhite-digest256);
+-pref("urlclassifier.trackingTable", "moztest-track-simple,ads-track-digest256,social-track-digest256,analytics-track-digest256");
+-pref("urlclassifier.trackingWhitelistTable", "moztest-trackwhite-simple,mozstd-trackwhite-digest256);
++pref("urlclassifier.trackingAnnotationWhitelistTable", "moztest-trackwhite-simple,mozstd-trackwhite-digest256");
+ 
++pref("urlclassifier.trackingTable", "moztest-track-simple,ads-track-digest256,social-track-digest256,analytics-track-digest256");
++pref("urlclassifier.trackingWhitelistTable", "moztest-trackwhite-simple,mozstd-trackwhite-digest256");
+ pref("urlclassifier.features.fingerprinting.blacklistTables", "base-fingerprinting-track-digest256");
+-pref("urlclassifier.features.fingerprinting.whitelistTables", "mozstd-trackwhite-digest256);
++pref("urlclassifier.features.fingerprinting.whitelistTables", "mozstd-trackwhite-digest256");
+ pref("urlclassifier.features.fingerprinting.annotate.blacklistTables", "base-fingerprinting-track-digest256");
+-pref("urlclassifier.features.fingerprinting.annotate.whitelistTables", "mozstd-trackwhite-digest256);
++pref("urlclassifier.features.fingerprinting.annotate.whitelistTables", "mozstd-trackwhite-digest256");
+ pref("urlclassifier.features.cryptomining.blacklistTables", "base-cryptomining-track-digest256");
+ pref("urlclassifier.features.cryptomining.whitelistTables", "mozstd-trackwhite-digest256");
+ pref("urlclassifier.features.cryptomining.annotate.blacklistTables", "base-cryptomining-track-digest256");
+ pref("urlclassifier.features.cryptomining.annotate.whitelistTables", "mozstd-trackwhite-digest256");
+ pref("urlclassifier.features.socialtracking.blacklistTables", "social-tracking-protection-facebook-digest256,social-tracking-protection-linkedin-digest256,social-tracking-protection-twitter-digest256");
+-pref("urlclassifier.features.socialtracking.whitelistTables", "mozstd-trackwhite-digest256);
++pref("urlclassifier.features.socialtracking.whitelistTables", "mozstd-trackwhite-digest256");
+ pref("urlclassifier.features.socialtracking.annotate.blacklistTables", "social-tracking-protection-facebook-digest256,social-tracking-protection-linkedin-digest256,social-tracking-protection-twitter-digest256");
+-pref("urlclassifier.features.socialtracking.annotate.whitelistTables", "mozstd-trackwhite-digest256);
++pref("urlclassifier.features.socialtracking.annotate.whitelistTables", "mozstd-trackwhite-digest256");
+ pref("urlclassifier.features.emailtracking.blocklistTables", "base-email-track-digest256");
+ pref("urlclassifier.features.emailtracking.allowlistTables", "mozstd-trackwhite-digest256");
+ pref("urlclassifier.features.emailtracking.datacollection.blocklistTables", "base-email-track-digest256,content-email-track-digest256");
+@@ -3353,13 +3353,13 @@ pref("browser.safebrowsing.debug", false);
+ // Allow users to ignore Safe Browsing warnings.
+ pref("browser.safebrowsing.allowOverride", true);
+ 
+-// These names are approved by the Google Safe Browsing team.
+-// Any changes must be coordinated with them.
+-//#ifdef MOZILLA_OFFICIAL
+-//  pref("browser.safebrowsing.id", "navclient-auto-ffox");
+-//#else
+-//  pref("browser.safebrowsing.id", "Firefox");
+-//#endif
++/*
++#ifdef MOZILLA_OFFICIAL
++  pref("browser.safebrowsing.id", "navclient-auto-ffox");
++#else
++  pref("browser.safebrowsing.id", "Firefox");
++#endif
++*/
+ 
+ // Download protection
+ // pref("browser.safebrowsing.downloads.enabled", true);
+-- 
+2.50.1
+

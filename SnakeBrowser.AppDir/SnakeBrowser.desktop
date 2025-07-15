@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Snake Browser
+Exec=snake
+Icon=snake-browser
+Type=Application
+Categories=Network;WebBrowser;

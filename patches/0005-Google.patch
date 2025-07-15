@@ -1,0 +1,244 @@
+From ec0cd8c0a5f2a052a1d40f1623ec0b358711eee0 Mon Sep 17 00:00:00 2001
+From: harvey186 <harvey186@hotmail.com>
+Date: Mon, 14 Jul 2025 12:57:46 +0200
+Subject: [PATCH] Google
+
+---
+ modules/libpref/init/all.js | 105 ++++++++++++++----------------------
+ 1 file changed, 41 insertions(+), 64 deletions(-)
+
+diff --git a/modules/libpref/init/all.js b/modules/libpref/init/all.js
+index 822f45ab49..d45285c81a 100644
+--- a/modules/libpref/init/all.js
++++ b/modules/libpref/init/all.js
+@@ -851,7 +851,7 @@ pref("privacy.baselineFingerprintingProtection.granularOverrides", "");
+ // for a list of hosts when detected as trackers.
+ // (See nsICookieService::BEHAVIOR_REJECT_TRACKER cookie behavior)
+ // See: Bug 1505212, Bug 1659394, Bug 1631811, Bug 1665035.
+-pref("privacy.restrict3rdpartystorage.partitionedHosts", "accounts.google.com/o/oauth2/,d35nw2lg0ahg0v.cloudfront.net/,datastudio.google.com/embed/reporting/,d3qlaywcwingl6.cloudfront.net/");
++//pref("privacy.restrict3rdpartystorage.partitionedHosts", "accounts.google.com/o/oauth2/,d35nw2lg0ahg0v.cloudfront.net/,datastudio.google.com/embed/reporting/,d3qlaywcwingl6.cloudfront.net/");
+ 
+ // If a host is contained in this pref list, user-interaction is required
+ // before granting the storage access permission.
+@@ -2898,27 +2898,27 @@ pref("font.size.monospace.x-math", 13);
+   pref("font.name-list.emoji", "SamsungColorEmoji, Noto Color Emoji");
+ 
+   pref("font.name-list.serif.ar", "Noto Naskh Arabic, Noto Serif, Droid Serif");
+-  pref("font.name-list.sans-serif.ar", "Noto Naskh Arabic, Roboto, Google Sans, Droid Sans");
++  pref("font.name-list.sans-serif.ar", "Noto Naskh Arabic, Roboto, Sansita, Droid Sans");
+   pref("font.name-list.monospace.ar", "Noto Naskh Arabic");
+ 
+   pref("font.name-list.serif.el", "Droid Serif, Noto Serif"); // not Charis SIL Compact, only has a few Greek chars
+-  pref("font.name-list.sans-serif.el", "Roboto, Google Sans, Droid Sans");
++  pref("font.name-list.sans-serif.el", "Roboto, Sansita, Droid Sans");
+   pref("font.name-list.monospace.el", "Droid Sans Mono");
+ 
+   pref("font.name-list.serif.he", "Droid Serif, Noto Serif, Noto Serif Hebrew");
+-  pref("font.name-list.sans-serif.he", "Roboto, Google Sans, Noto Sans Hebrew, Droid Sans Hebrew, Droid Sans, Arial");
++  pref("font.name-list.sans-serif.he", "Roboto, Sansita, Noto Sans Hebrew, Droid Sans Hebrew, Droid Sans, Arial");
+   pref("font.name-list.monospace.he", "Droid Sans Mono");
+ 
+   pref("font.name-list.serif.ja", "Charis SIL Compact, Noto Serif CJK JP, Noto Serif, Droid Serif");
+-  pref("font.name-list.sans-serif.ja", "Roboto, Google Sans, Droid Sans, MotoyaLMaru, MotoyaLCedar, Noto Sans JP, Noto Sans CJK JP, SEC CJK JP, Droid Sans Japanese");
++  pref("font.name-list.sans-serif.ja", "Roboto, Sansita, Droid Sans, MotoyaLMaru, MotoyaLCedar, Noto Sans JP, Noto Sans CJK JP, SEC CJK JP, Droid Sans Japanese");
+   pref("font.name-list.monospace.ja", "MotoyaLMaru, MotoyaLCedar, Noto Sans Mono CJK JP, SEC Mono CJK JP, Droid Sans Mono");
+ 
+   pref("font.name-list.serif.ko", "Charis SIL Compact, Noto Serif CJK KR, Noto Serif, Droid Serif, HYSerif");
+-  pref("font.name-list.sans-serif.ko", "Roboto, Google Sans, SmartGothic, NanumGothic, Noto Sans KR, Noto Sans CJK KR, One UI Sans KR VF, SamsungKorean_v2.0, SEC CJK KR, DroidSansFallback, Droid Sans Fallback");
++  pref("font.name-list.sans-serif.ko", "Roboto, Sansita, SmartGothic, NanumGothic, Noto Sans KR, Noto Sans CJK KR, One UI Sans KR VF, SamsungKorean_v2.0, SEC CJK KR, DroidSansFallback, Droid Sans Fallback");
+   pref("font.name-list.monospace.ko", "Droid Sans Mono, Noto Sans Mono CJK KR, SEC Mono CJK KR");
+ 
+   pref("font.name-list.serif.th", "Charis SIL Compact, Noto Serif, Noto Serif Thai, Droid Serif");
+-  pref("font.name-list.sans-serif.th", "Roboto, Google Sans, Noto Sans Thai, Droid Sans Thai, Droid Sans");
++  pref("font.name-list.sans-serif.th", "Roboto, Sansita, Noto Sans Thai, Droid Sans Thai, Droid Sans");
+   pref("font.name-list.monospace.th", "Droid Sans Mono");
+ 
+   pref("font.name-list.serif.x-armn", "Noto Serif Armenian");
+@@ -2928,7 +2928,7 @@ pref("font.size.monospace.x-math", 13);
+   pref("font.name-list.sans-serif.x-beng", "Noto Sans Bengali");
+ 
+   pref("font.name-list.serif.x-cyrillic", "Charis SIL Compact, Noto Serif, Droid Serif");
+-  pref("font.name-list.sans-serif.x-cyrillic", "Roboto, Google Sans, Droid Sans");
++  pref("font.name-list.sans-serif.x-cyrillic", "Roboto, Sansita, Droid Sans");
+   pref("font.name-list.monospace.x-cyrillic", "Droid Sans Mono");
+ 
+   pref("font.name-list.serif.x-devanagari", "Noto Serif Devanagari");
+@@ -2970,27 +2970,27 @@ pref("font.size.monospace.x-math", 13);
+   pref("font.name-list.sans-serif.x-tibt", "Noto Sans Tibetan");
+ 
+   pref("font.name-list.serif.x-unicode", "Charis SIL Compact, Noto Serif, Droid Serif");
+-  pref("font.name-list.sans-serif.x-unicode", "Roboto, Google Sans, Droid Sans");
++  pref("font.name-list.sans-serif.x-unicode", "Roboto, Sansita, Droid Sans");
+   pref("font.name-list.monospace.x-unicode", "Droid Sans Mono");
+ 
+   pref("font.name-list.serif.x-western", "Charis SIL Compact, Noto Serif, Droid Serif");
+-  pref("font.name-list.sans-serif.x-western", "Roboto, Google Sans, Droid Sans");
++  pref("font.name-list.sans-serif.x-western", "Roboto, Sansita, Droid Sans");
+   pref("font.name-list.monospace.x-western", "Droid Sans Mono");
+ 
+   pref("font.name-list.serif.zh-CN", "Charis SIL Compact, Noto Serif CJK SC, Noto Serif, Droid Serif, Droid Sans Fallback");
+-  pref("font.name-list.sans-serif.zh-CN", "Roboto, Google Sans, Droid Sans, Noto Sans SC, Noto Sans CJK SC, SEC CJK SC, Droid Sans Fallback");
++  pref("font.name-list.sans-serif.zh-CN", "Roboto, Sansita, Droid Sans, Noto Sans SC, Noto Sans CJK SC, SEC CJK SC, Droid Sans Fallback");
+   pref("font.name-list.monospace.zh-CN", "Droid Sans Mono, Noto Sans Mono CJK SC, SEC Mono CJK SC, Noto Sans CJK SC, MiSans VF, MiSans, Droid Sans Fallback");
+ 
+   pref("font.name-list.serif.zh-HK", "Charis SIL Compact, Noto Serif CJK TC, Noto Serif, Droid Serif, Droid Sans Fallback");
+-  pref("font.name-list.sans-serif.zh-HK", "Roboto, Google Sans, Droid Sans, Noto Sans TC, Noto Sans SC, Noto Sans CJK TC, SEC CJK TC, Droid Sans Fallback");
++  pref("font.name-list.sans-serif.zh-HK", "Roboto, Sansita, Droid Sans, Noto Sans TC, Noto Sans SC, Noto Sans CJK TC, SEC CJK TC, Droid Sans Fallback");
+   pref("font.name-list.monospace.zh-HK", "Droid Sans Mono, Noto Sans Mono CJK TC, SEC Mono CJK TC, Noto Sans CJK TC, MiSans TC VF, MiSans TC, Droid Sans Fallback");
+ 
+   pref("font.name-list.serif.zh-TW", "Charis SIL Compact, Noto Serif CJK TC, Noto Serif, Droid Serif, Droid Sans Fallback");
+-  pref("font.name-list.sans-serif.zh-TW", "Roboto, Google Sans, Droid Sans, Noto Sans TC, Noto Sans SC, Noto Sans CJK TC, SEC CJK TC, Droid Sans Fallback");
++  pref("font.name-list.sans-serif.zh-TW", "Roboto, Sansita, Droid Sans, Noto Sans TC, Noto Sans SC, Noto Sans CJK TC, SEC CJK TC, Droid Sans Fallback");
+   pref("font.name-list.monospace.zh-TW", "Droid Sans Mono, Noto Sans Mono CJK TC, SEC Mono CJK TC, Noto Sans CJK TC, MiSans TC VF, MiSans TC, Droid Sans Fallback");
+ 
+   pref("font.name-list.serif.x-math", "Latin Modern Math, STIX Two Math, XITS Math, Cambria Math, Libertinus Math, DejaVu Math TeX Gyre, TeX Gyre Bonum Math, TeX Gyre Pagella Math, TeX Gyre Schola, TeX Gyre Termes Math, STIX Math, Asana Math, STIXGeneral, DejaVu Serif, DejaVu Sans, Charis SIL Compact");
+-  pref("font.name-list.sans-serif.x-math", "Roboto, Google Sans");
++  pref("font.name-list.sans-serif.x-math", "Roboto, Sansita");
+   pref("font.name-list.monospace.x-math", "Droid Sans Mono");
+ 
+ #endif
+@@ -3082,7 +3082,7 @@ pref("network.tcp.keepalive.idle_time", 600); // seconds; 10 mins
+ 
+ // All the Geolocation preferences are here.
+ //
+-pref("geo.provider.network.url", "https://www.googleapis.com/geolocation/v1/geolocate?key=%GOOGLE_LOCATION_SERVICE_API_KEY%");
++pref("geo.provider.network.url", "http://ip-api.com/json/
+ 
+ // Timeout to wait before sending the location request.
+ pref("geo.provider.network.timeToWaitBeforeSending", 5000);
+@@ -3100,7 +3100,7 @@ pref("geo.provider.network.timeout", 60000);
+ 
+ // Region
+ pref("browser.region.log", false);
+-pref("browser.region.network.url", "https://location.services.mozilla.com/v1/country?key=%MOZILLA_API_KEY%");
++pref("browser.region.network.url", "http://ip-api.com/json/");
+ // Include wifi data in region request.
+ pref("browser.region.network.scan", false);
+ // Timeout for whole region request.
+@@ -3294,33 +3294,33 @@ pref("urlclassifier.malwareTable", "goog-malware-proto,goog-unwanted-proto,mozte
+ #ifdef MOZILLA_OFFICIAL
+   // In official builds, we are allowed to use Google's private phishing
+   // list (see bug 1288840).
+-  pref("urlclassifier.phishTable", "goog-phish-proto,moztest-phish-simple");
++//  pref("urlclassifier.phishTable", "goog-phish-proto,moztest-phish-simple");
+ #else
+-  pref("urlclassifier.phishTable", "googpub-phish-proto,moztest-phish-simple");
++//  pref("urlclassifier.phishTable", "googpub-phish-proto,moztest-phish-simple");
+ #endif
+ 
+ // Tables for application reputation
+-pref("urlclassifier.downloadAllowTable", "goog-downloadwhite-proto");
+-pref("urlclassifier.downloadBlockTable", "goog-badbinurl-proto");
++//pref("urlclassifier.downloadAllowTable", "goog-downloadwhite-proto");
++//pref("urlclassifier.downloadBlockTable", "goog-badbinurl-proto");
+ 
+ // Tables for anti-tracking features
+ pref("urlclassifier.trackingAnnotationTable", "moztest-track-simple,ads-track-digest256,social-track-digest256,analytics-track-digest256,content-track-digest256");
+-pref("urlclassifier.trackingAnnotationWhitelistTable", "moztest-trackwhite-simple,mozstd-trackwhite-digest256,google-trackwhite-digest256");
++pref("urlclassifier.trackingAnnotationWhitelistTable", "moztest-trackwhite-simple,mozstd-trackwhite-digest256);
+ pref("urlclassifier.trackingTable", "moztest-track-simple,ads-track-digest256,social-track-digest256,analytics-track-digest256");
+-pref("urlclassifier.trackingWhitelistTable", "moztest-trackwhite-simple,mozstd-trackwhite-digest256,google-trackwhite-digest256");
++pref("urlclassifier.trackingWhitelistTable", "moztest-trackwhite-simple,mozstd-trackwhite-digest256);
+ 
+ pref("urlclassifier.features.fingerprinting.blacklistTables", "base-fingerprinting-track-digest256");
+-pref("urlclassifier.features.fingerprinting.whitelistTables", "mozstd-trackwhite-digest256,google-trackwhite-digest256");
++pref("urlclassifier.features.fingerprinting.whitelistTables", "mozstd-trackwhite-digest256);
+ pref("urlclassifier.features.fingerprinting.annotate.blacklistTables", "base-fingerprinting-track-digest256");
+-pref("urlclassifier.features.fingerprinting.annotate.whitelistTables", "mozstd-trackwhite-digest256,google-trackwhite-digest256");
++pref("urlclassifier.features.fingerprinting.annotate.whitelistTables", "mozstd-trackwhite-digest256);
+ pref("urlclassifier.features.cryptomining.blacklistTables", "base-cryptomining-track-digest256");
+ pref("urlclassifier.features.cryptomining.whitelistTables", "mozstd-trackwhite-digest256");
+ pref("urlclassifier.features.cryptomining.annotate.blacklistTables", "base-cryptomining-track-digest256");
+ pref("urlclassifier.features.cryptomining.annotate.whitelistTables", "mozstd-trackwhite-digest256");
+ pref("urlclassifier.features.socialtracking.blacklistTables", "social-tracking-protection-facebook-digest256,social-tracking-protection-linkedin-digest256,social-tracking-protection-twitter-digest256");
+-pref("urlclassifier.features.socialtracking.whitelistTables", "mozstd-trackwhite-digest256,google-trackwhite-digest256");
++pref("urlclassifier.features.socialtracking.whitelistTables", "mozstd-trackwhite-digest256);
+ pref("urlclassifier.features.socialtracking.annotate.blacklistTables", "social-tracking-protection-facebook-digest256,social-tracking-protection-linkedin-digest256,social-tracking-protection-twitter-digest256");
+-pref("urlclassifier.features.socialtracking.annotate.whitelistTables", "mozstd-trackwhite-digest256,google-trackwhite-digest256");
++pref("urlclassifier.features.socialtracking.annotate.whitelistTables", "mozstd-trackwhite-digest256);
+ pref("urlclassifier.features.emailtracking.blocklistTables", "base-email-track-digest256");
+ pref("urlclassifier.features.emailtracking.allowlistTables", "mozstd-trackwhite-digest256");
+ pref("urlclassifier.features.emailtracking.datacollection.blocklistTables", "base-email-track-digest256,content-email-track-digest256");
+@@ -3336,7 +3336,7 @@ pref("urlclassifier.trackingAnnotationSkipURLs", "");
+ pref("privacy.rejectForeign.allowList", "");
+ 
+ // The list of email webapp sites
+-pref("privacy.trackingprotection.emailtracking.webapp.domains", "mail.163.com,mail.aol.com,fastmail.com,webmail.gandi.net,mail.google.com,navigator-bs.gmx.com,app.hey.com,horde.org/apps/webmail,hushmail.com,icloud.com/mail,kolabnow.com,laposte.net/accueil,mail.lycos.com,mail.com/mail/,mail.ru,mailfence.com,outlook.live.com,email-postaci.com/,posteo.de,mail.protonmail.com,app.rackspace.com,mail.rediff.com,emailmg.ipage.com,runbox.com,mail.sina.com.cn,tutanota.com,mail.yahoo.com,mail.yandex.com,mail.zimbra.com,zoho.com/mail/");
++pref("privacy.trackingprotection.emailtracking.webapp.domains", "mail.163.com,mail.aol.com,fastmail.com,webmail.gandi.net,navigator-bs.gmx.com,app.hey.com,horde.org/apps/webmail,hushmail.com,icloud.com/mail,kolabnow.com,laposte.net/accueil,mail.lycos.com,mail.com/mail/,mail.ru,mailfence.com,outlook.live.com,email-postaci.com/,posteo.de,mail.protonmail.com,app.rackspace.com,mail.rediff.com,emailmg.ipage.com,runbox.com,mail.sina.com.cn,tutanota.com,mail.yahoo.com,mail.yandex.com,mail.zimbra.com,zoho.com/mail/");
+ 
+ // Number of random entries to send with a gethash request
+ pref("urlclassifier.gethashnoise", 4);
+@@ -3355,48 +3355,25 @@ pref("browser.safebrowsing.allowOverride", true);
+ 
+ // These names are approved by the Google Safe Browsing team.
+ // Any changes must be coordinated with them.
+-#ifdef MOZILLA_OFFICIAL
+-  pref("browser.safebrowsing.id", "navclient-auto-ffox");
+-#else
+-  pref("browser.safebrowsing.id", "Firefox");
+-#endif
++//#ifdef MOZILLA_OFFICIAL
++//  pref("browser.safebrowsing.id", "navclient-auto-ffox");
++//#else
++//  pref("browser.safebrowsing.id", "Firefox");
++//#endif
+ 
+ // Download protection
+-pref("browser.safebrowsing.downloads.enabled", true);
+-pref("browser.safebrowsing.downloads.remote.enabled", true);
+-pref("browser.safebrowsing.downloads.remote.timeout_ms", 15000);
+-pref("browser.safebrowsing.downloads.remote.url", "https://sb-ssl.google.com/safebrowsing/clientreport/download?key=%GOOGLE_SAFEBROWSING_API_KEY%");
+-pref("browser.safebrowsing.downloads.remote.block_dangerous",            true);
+-pref("browser.safebrowsing.downloads.remote.block_dangerous_host",       true);
+-pref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", true);
+-pref("browser.safebrowsing.downloads.remote.block_uncommon",             true);
++// pref("browser.safebrowsing.downloads.enabled", true);
++// pref("browser.safebrowsing.downloads.remote.enabled", true);
++// pref("browser.safebrowsing.downloads.remote.timeout_ms", 15000);
++// pref("browser.safebrowsing.downloads.remote.url", "https://sb-ssl.google.com/safebrowsing/clientreport/download?key=%GOOGLE_SAFEBROWSING_API_KEY%");
++// pref("browser.safebrowsing.downloads.remote.block_dangerous",            true);
++// pref("browser.safebrowsing.downloads.remote.block_dangerous_host",       true);
++// pref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", true);
++// pref("browser.safebrowsing.downloads.remote.block_uncommon",             true);
+ 
+ // Android SafeBrowsing's configuration is in ContentBlocking.java, keep in sync.
+ #ifndef MOZ_WIDGET_ANDROID
+ 
+-// Google Safe Browsing provider (legacy)
+-pref("browser.safebrowsing.provider.google.pver", "2.2");
+-pref("browser.safebrowsing.provider.google.lists", "goog-badbinurl-shavar,goog-downloadwhite-digest256,goog-phish-shavar,googpub-phish-shavar,goog-malware-shavar,goog-unwanted-shavar");
+-pref("browser.safebrowsing.provider.google.updateURL", "https://safebrowsing.google.com/safebrowsing/downloads?client=SAFEBROWSING_ID&appver=%MAJOR_VERSION%&pver=2.2&key=%GOOGLE_SAFEBROWSING_API_KEY%");
+-pref("browser.safebrowsing.provider.google.gethashURL", "https://safebrowsing.google.com/safebrowsing/gethash?client=SAFEBROWSING_ID&appver=%MAJOR_VERSION%&pver=2.2");
+-pref("browser.safebrowsing.provider.google.reportURL", "https://safebrowsing.google.com/safebrowsing/diagnostic?site=");
+-pref("browser.safebrowsing.provider.google.reportPhishMistakeURL", "https://%LOCALE%.phish-error.mozilla.com/?url=");
+-pref("browser.safebrowsing.provider.google.reportMalwareMistakeURL", "https://%LOCALE%.malware-error.mozilla.com/?url=");
+-pref("browser.safebrowsing.provider.google.advisoryURL", "https://developers.google.com/safe-browsing/v4/advisory");
+-pref("browser.safebrowsing.provider.google.advisoryName", "Google Safe Browsing");
+-
+-// Google Safe Browsing provider
+-pref("browser.safebrowsing.provider.google4.pver", "4");
+-pref("browser.safebrowsing.provider.google4.lists", "goog-badbinurl-proto,goog-downloadwhite-proto,goog-phish-proto,googpub-phish-proto,goog-malware-proto,goog-unwanted-proto,goog-harmful-proto");
+-pref("browser.safebrowsing.provider.google4.updateURL", "https://safebrowsing.googleapis.com/v4/threatListUpdates:fetch?$ct=application/x-protobuf&key=%GOOGLE_SAFEBROWSING_API_KEY%&$httpMethod=POST");
+-pref("browser.safebrowsing.provider.google4.gethashURL", "https://safebrowsing.googleapis.com/v4/fullHashes:find?$ct=application/x-protobuf&key=%GOOGLE_SAFEBROWSING_API_KEY%&$httpMethod=POST");
+-pref("browser.safebrowsing.provider.google4.reportURL", "https://safebrowsing.google.com/safebrowsing/diagnostic?site=");
+-pref("browser.safebrowsing.provider.google4.reportPhishMistakeURL", "https://%LOCALE%.phish-error.mozilla.com/?url=");
+-pref("browser.safebrowsing.provider.google4.reportMalwareMistakeURL", "https://%LOCALE%.malware-error.mozilla.com/?url=");
+-pref("browser.safebrowsing.provider.google4.advisoryURL", "https://developers.google.com/safe-browsing/v4/advisory");
+-pref("browser.safebrowsing.provider.google4.advisoryName", "Google Safe Browsing");
+-pref("browser.safebrowsing.provider.google4.dataSharingURL", "https://safebrowsing.googleapis.com/v4/threatHits?$ct=application/x-protobuf&key=%GOOGLE_SAFEBROWSING_API_KEY%&$httpMethod=POST");
+-pref("browser.safebrowsing.provider.google4.dataSharing.enabled", false);
+ 
+ #endif // ifndef MOZ_WIDGET_ANDROID
+ 
+@@ -3404,7 +3381,7 @@ pref("browser.safebrowsing.reportPhishURL", "https://%LOCALE%.phish-report.mozil
+ 
+ // Mozilla Safe Browsing provider (for tracking protection and plugin blocking)
+ pref("browser.safebrowsing.provider.mozilla.pver", "2.2");
+-pref("browser.safebrowsing.provider.mozilla.lists", "base-track-digest256,mozstd-trackwhite-digest256,google-trackwhite-digest256,content-track-digest256,mozplugin-block-digest256,mozplugin2-block-digest256,ads-track-digest256,social-track-digest256,analytics-track-digest256,base-fingerprinting-track-digest256,content-fingerprinting-track-digest256,base-cryptomining-track-digest256,content-cryptomining-track-digest256,fanboyannoyance-ads-digest256,fanboysocial-ads-digest256,easylist-ads-digest256,easyprivacy-ads-digest256,adguard-ads-digest256,social-tracking-protection-digest256,social-tracking-protection-facebook-digest256,social-tracking-protection-linkedin-digest256,social-tracking-protection-twitter-digest256,base-email-track-digest256,content-email-track-digest256,consent-manager-track-digest256");
++pref("browser.safebrowsing.provider.mozilla.lists", "base-track-digest256,mozstd-trackwhite-digest256,content-track-digest256,mozplugin-block-digest256,mozplugin2-block-digest256,ads-track-digest256,social-track-digest256,analytics-track-digest256,base-fingerprinting-track-digest256,content-fingerprinting-track-digest256,base-cryptomining-track-digest256,content-cryptomining-track-digest256,fanboyannoyance-ads-digest256,fanboysocial-ads-digest256,easylist-ads-digest256,easyprivacy-ads-digest256,adguard-ads-digest256,social-tracking-protection-digest256,social-tracking-protection-facebook-digest256,social-tracking-protection-linkedin-digest256,social-tracking-protection-twitter-digest256,base-email-track-digest256,content-email-track-digest256,consent-manager-track-digest256");
+ pref("browser.safebrowsing.provider.mozilla.updateURL", "moz-sbrs:://antitracking");
+ pref("browser.safebrowsing.provider.mozilla.gethashURL", "https://shavar.services.mozilla.com/gethash?client=SAFEBROWSING_ID&appver=%MAJOR_VERSION%&pver=2.2");
+ // Set to a date in the past to force immediate download in new profiles.
+-- 
+2.50.1
+

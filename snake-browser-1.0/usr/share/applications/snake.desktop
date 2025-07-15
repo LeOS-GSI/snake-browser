@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Snake Browser
+Exec=/opt/snake-browser/snake
+Icon=/opt/snake-browser/browser/chrome/icons/default/
+Type=Application
+Categories=Network;WebBrowser;
+
