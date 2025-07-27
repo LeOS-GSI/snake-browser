@@ -1,0 +1,68 @@
+From 7ff4caddce970ffc3d5e2fee98c3c0a7803707f4 Mon Sep 17 00:00:00 2001
+From: harvey186 <harvey186@hotmail.com>
+Date: Sat, 26 Jul 2025 17:41:18 +0200
+Subject: [PATCH] R14102-ROOT-mozCinfigOK
+
+---
+ configs/common/mozconfig | 24 ------------------------
+ 1 file changed, 24 deletions(-)
+
+diff --git a/configs/common/mozconfig b/configs/common/mozconfig
+index 6aadab7..bab9575 100644
+--- a/configs/common/mozconfig
++++ b/configs/common/mozconfig
+@@ -32,10 +32,6 @@ if ! test "$SCCACHE_GHA_ENABLED" = "false"; then
+   fi
+ fi
+ 
+-# add safe browsing key if it exists on a file
+-if test -f "$HOME/.zen-keys/safebrowsing.dat"; then
+-  ac_add_options --with-google-safebrowsing-api-keyfile="$HOME/.zen-keys/safebrowsing.dat"
+-fi
+ 
+ if test "$ZEN_RELEASE"; then
+ 
+@@ -67,18 +63,6 @@ if test "$ZEN_RELEASE"; then
+ 
+   ac_add_options --disable-default-browser-agent
+ 
+-  if ! test "$ZEN_DISABLE_LTO"; then
+-    # only enable full LTO when ZEN_RELEASE_BRANCH is 'release'
+-    if test "$ZEN_RELEASE_BRANCH" = "release"; then
+-      # TODO: make it "full" once we have the resources to build it
+-      export MOZ_LTO=cross,full
+-      ac_add_options --enable-lto=cross,full
+-    else
+-      export MOZ_LTO=cross,thin
+-      ac_add_options --enable-lto=cross,thin
+-    fi
+-  fi
+-
+   ac_add_options --enable-jemalloc
+ 
+   mk_add_options MOZILLA_OFFICIAL=1
+@@ -97,7 +81,6 @@ if test "$ZEN_RELEASE"; then
+   ac_add_options --enable-updater
+ 
+   export MOZ_PACKAGE_JSSHELL=1
+-fi
+ 
+ ac_add_options --enable-unverified-updates
+ 
+@@ -105,13 +88,6 @@ ac_add_options --enable-jxl
+ 
+ ac_add_options --with-unsigned-addon-scopes=app,system
+ 
+-mk_add_options MOZ_DATA_REPORTING=
+-mk_add_options MOZ_SERVICES_HEALTHREPORT=
+-mk_add_options MOZ_TELEMETRY_REPORTING=
+-
+-ac_add_options MOZ_DATA_REPORTING=
+-ac_add_options MOZ_TELEMETRY_REPORTING=
+-
+ # Allow loading unsigned extensions
+ export MOZ_REQUIRE_SIGNING=
+ mk_add_options MOZ_REQUIRE_SIGNING=
+-- 
+2.50.1
+

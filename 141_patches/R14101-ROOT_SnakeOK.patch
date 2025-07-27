@@ -1,0 +1,45 @@
+From ea0370eaef1b1bc541a1d3eb04479db2d2ed4177 Mon Sep 17 00:00:00 2001
+From: harvey186 <harvey186@hotmail.com>
+Date: Sun, 27 Jul 2025 12:58:57 +0200
+Subject: [PATCH] x
+
+---
+ R14101-ROOT_SnakeOK.patch | 20 +-------------------
+ surfer.json               | 16 ++++++++--------
+ 2 files changed, 9 insertions(+), 27 deletions(-)
+
+
+diff --git a/surfer.json b/surfer.json
+index e9ae7fb..c678f54 100644
+--- a/surfer.json
++++ b/surfer.json
+@@ -1,8 +1,8 @@
+ {
+-  "name": "Zen Browser",
+-  "vendor": "Zen OSS Team",
+-  "appId": "zen",
+-  "binaryName": "zen",
++  "name": "Snake Browser",
++  "vendor": "Snake OSS Team",
++  "appId": "snake",
++  "binaryName": "snake",
+   "version": {
+     "product": "firefox",
+     "version": "141.0",
+@@ -15,9 +15,9 @@
+   "brands": {
+     "release": {
+       "backgroundColor": "#282A33",
+-      "brandShorterName": "Zen",
+-      "brandShortName": "Zen",
+-      "brandFullName": "Zen Browser",
++      "brandShorterName": "Snake",
++      "brandShortName": "Snake",
++      "brandFullName": "Snake Browser",
+       "release": {
+         "displayVersion": "1.14.9b",
+         "github": {
+
+-- 
+2.50.1
+

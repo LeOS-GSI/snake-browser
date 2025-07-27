@@ -1,4 +1,9 @@
 this is a fork of Zen Browser. I have removed a lot of googel shit, changed captive portal and much to get more privacy / less spying
 
+build Snake-Browser
 
-https://github.com/LeOS-GSI/snake-browser/blob/main/icon.png
+'clone this repo'
+
+cd into created folder
+
+run ./snake.sh 

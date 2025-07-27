@@ -1,0 +1,34 @@
+From ce248de13d1130624d6a61311d78712c2ca9249d Mon Sep 17 00:00:00 2001
+From: harvey186 <harvey186@hotmail.com>
+Date: Sat, 26 Jul 2025 17:47:57 +0200
+Subject: [PATCH] R14102A-ROOT-mozConfigOK
+
+---
+ configs/common/mozconfig             |  12 --
+
+diff --git a/configs/common/mozconfig b/configs/common/mozconfig
+index bab9575..1d3709f 100644
+--- a/configs/common/mozconfig
++++ b/configs/common/mozconfig
+@@ -23,18 +23,6 @@ export MOZ_INCLUDE_SOURCE_INFO=1
+ 
+ ac_add_options --enable-application=browser
+ 
+-# Anything except 'SCCACHE_GHA_ENABLED == false'
+-if ! test "$SCCACHE_GHA_ENABLED" = "false"; then
+-  if test -x "$(command -v sccache)"; then
+-    ac_add_options --with-ccache=sccache
+-  elif test -f "$HOME/.mozbuild/sccache/sccache"; then
+-    ac_add_options --with-ccache="$HOME"/.mozbuild/sccache/sccache
+-  fi
+-fi
+-
+-
+-if test "$ZEN_RELEASE"; then
+-
+   # TODO: Make this successful in builds
+   # ac_add_options --enable-clang-plugin
+   ac_add_options --enable-bootstrap=-sccache
+-- 
+2.50.1
+
